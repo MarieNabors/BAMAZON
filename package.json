@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "homework",
+  "main": "bamazon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarieNabors/BAMAZON.git"
+  },
+  "author": "marie nabors",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarieNabors/BAMAZON/issues"
+  },
+  "homepage": "https://github.com/MarieNabors/BAMAZON#readme",
+  "dependencies": {
+    "cli-table": "^0.3.1"
+  }
+}
