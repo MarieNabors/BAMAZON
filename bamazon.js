@@ -4,6 +4,20 @@
 var mySQL = require("mysql");
 var inquirer = require("inquirer");
 
+//instantiating table, copy/pasted from npmjs
+// var table = Table({
+//     head: ['TH 1 label', 'TH 2 label']
+//   , colWidths: [100, 200]
+// });
+ 
+// // table is an Array, so you can `push`, `unshift`, `splice` and friends 
+// table.push(
+//     ['First value', 'Second value']
+//   , ['First value', 'Second value']
+// );
+ 
+// console.log(table.toString());
+
 //connect to mySQLworkbench database, "Bamazon"
 
 var connection = mySQL.createConnection({
@@ -85,19 +99,6 @@ var askShopper = function(res){
 // check inventory for sufficient quantity
 //either respond "insufficient quantity" or fulfill the order and update inventory 
 
-//instantiating table, copy/pasted from npmjs
-// var table = new Table({
-//     head: ['TH 1 label', 'TH 2 label']
-//   , colWidths: [100, 200]
-// });
- 
-// // table is an Array, so you can `push`, `unshift`, `splice` and friends 
-// table.push(
-//     ['First value', 'Second value']
-//   , ['First value', 'Second value']
-// );
- 
-// console.log(table.toString());
 
 
 
