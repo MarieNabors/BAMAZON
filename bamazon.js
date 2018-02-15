@@ -26,19 +26,19 @@ var connection = mySQL.createConnection({
 			database: "Bamazon"
 		})
 
-connection.connect(function(err){
-	if (err) throw err;
-	console.log("You successfully connected to your mySQL database!");
-	displayTable();
+	connection.connect(function(err){
+			if (err) throw err;
+			console.log("You successfully connected to your mySQL database!");
+			displayTable();
 })
 //print table to terminal
 //create a function to display the table to the user/shopper
 var displayTable = function(){
 	connection.query("SELECT * FROM products", function(err, res){
 		for(var i=0; i<res.length; i++){
-			console.log(res[i].id+" ||| " +res[i].item_name + " ||| " +
-				res[i].department + " ||| " + res[i].price + " ||| " + res[i]
-				.stock_inventory);
+		console.log(res[i].id+" ||| " +res[i].item_name + " ||| " +
+		res[i].department + " ||| " + res[i].price + " ||| " + res[i]
+		.stock_inventory);
 		}
 		askShopper(res);
 	})
@@ -84,10 +84,11 @@ var askShopper = function(res){
           	var newStockInventory = res[answer.choice-1].stock_inventory-answer.quantity;
           	//console.log("******"+newStockInventory);
           }
-      var update = connection.query("UPDATE products SET stock_inventory ='" +(res[id].stock_inventory-answer.quantity)
+          var update = connection.query("UPDATE products SET stock_inventory = '" + (res[id].stock_inventory - answer.quantity)
+      //var update = connection.query("UPDATE products SET stock_inventory = " (res[id].stock_inventory-answer.quantity)
       + "'", function(err, res2){
       	console.log("Enjoy your fabulous purchase!")
-      	displayTable();
+      	//displayTable();
       })
       	//+ newStockInventory + " WHERE id = " + answer.choice
 			connection.query(query,function(err, res) {
