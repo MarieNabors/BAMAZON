@@ -3,21 +3,19 @@
 
 var mySQL = require("mysql");
 var inquirer = require("inquirer");
+// var Table = require('cli-table');
 
-//instantiating table, copy/pasted from npmjs
-// var table = Table({
-//     head: ['TH 1 label', 'TH 2 label']
-//   , colWidths: [100, 200]
-// });
- 
-// // table is an Array, so you can `push`, `unshift`, `splice` and friends 
-// table.push(
-//     ['First value', 'Second value']
-//   , ['First value', 'Second value']
-// );
- 
-// console.log(table.toString());
 
+// //instantiating table, copy/pasted from npmjs
+// var table = new Table ({
+//             head: ["id", "item_name", "department", "price", "stock_inventory"],
+//             colWidths: [13, 35, 30, 10, 10]
+//         });
+//         for (var i = 0; i < res.length; i++) {
+//             var infoArray = [res[i].item_id, res[i].item_name,  res[i].department, res[i].price, res[i].stock_inventory]; 
+//             table.push(infoArray);
+//         };        
+//         console.log(table.toString());
 //connect to mySQLworkbench database, "Bamazon"
 
 var connection = mySQL.createConnection({
