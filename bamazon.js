@@ -57,7 +57,7 @@ var askShopper = function(res){
 				{	
 					type:"input",
 					name:"quantity",
-					message:"How many would you like?"
+					message:"How many would you like to purchase?"
 				}])
 				.then(function(answer){
 					var correct = false;
@@ -82,9 +82,14 @@ var askShopper = function(res){
           if (answer.quantity<res[answer.choice-1].stock_inventory){
           	//subtract quantity desired from inventory for that item
           	var newStockInventory = res[answer.choice-1].stock_inventory-answer.quantity;
-          	console.log("******"+newStockInventory);
+          	//console.log("******"+newStockInventory);
           }
-      var update = "UPDATE products SET stock_inventory =" + newStockInventory + " WHERE id = " + answer.choice
+      var update = connection.query("UPDATE products SET stock_inventory ='" +(res[id].stock_inventory-answer.quantity)
+      + "'", function(err, res2){
+      	console.log("Enjoy your fabulous purchase!")
+      	displayTable();
+      })
+      	//+ newStockInventory + " WHERE id = " + answer.choice
 			connection.query(query,function(err, res) {
 			//	console.log(res);
 })
